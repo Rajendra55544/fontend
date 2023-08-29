@@ -1,0 +1,83 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .action-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: #888;
+  }
+  
+  .action-btn:hover {
+    color: #000;
+  }
+  .add_btn{
+    background: #554add;
+    width: 100px;
+    height: 35px;
+    font-size: 12px !important;
+    border: none !important;
+    color: white;
+    text-decoration: none;
+    padding: 7px;
+}
+.header_div{
+    display: flex;
+    margin-bottom: 15px;
+    flex-direction: row-reverse;
+}
+.table-container {
+  position: relative;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+
+.pagination {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pagination li {
+  margin: 0 5px;
+}
+
+.pagination li a {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  color: #333;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pagination li a:hover {
+  background-color: #f2f2f2;
+}
+
+.active a {
+  background-color: #4CAF50;
+  color: white;
+}
