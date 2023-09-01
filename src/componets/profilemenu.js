@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
+
 function UserProfile({user,Logout}) {
   return (
     <Navbar variant="dark" bg="gry" expand="lg">
@@ -10,7 +11,7 @@ function UserProfile({user,Logout}) {
         <Navbar.Collapse id="navbar-dark-example">
           <Nav>
           <img
-          src={`https://www.gravatar.com/avatar/}`}
+          src={user.file ? user.file :`https://www.gravatar.com/avatar/}`}
           alt="profile" style={{width: "62px",height: "60px",borderRadius: "50%"}}/>
             <NavDropdown
               id="user_name"
@@ -18,6 +19,8 @@ function UserProfile({user,Logout}) {
               menuVariant="white"
               style={{color: "#020202"}}
             >
+              <NavDropdown.Item><Link style={{textDecoration:"none",color:"black"}} to="/update_profile_pic">Update Profile Image</Link></NavDropdown.Item>
+
               <NavDropdown.Item><Link style={{textDecoration:"none",color:"black"}} to="/profile">My Profile</Link></NavDropdown.Item>
               {window.location.host.split(".")[0] !== "admin" &&
               <NavDropdown.Item> 

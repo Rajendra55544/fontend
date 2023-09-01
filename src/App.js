@@ -14,6 +14,7 @@ import Home from './componets/user/Home';
 import Profile from './componets/user/Profile';
 import Address from './componets/user/Address';
 import AddAddress from './componets/user/Add_Address';
+import UserProfileImage from './componets/user/Update_Profile';
 function App() {
 
   const { isAuthenticated } = useContext(AuthContext);
@@ -36,7 +37,6 @@ function App() {
       <>
         <Header />
           <Routes>
-            {/* <Route path='/' element = {<Home />} /> */}
             <Route path="login/" element={<Login />} />
             <Route path="signup/" element={<Signup />} />
             <Route path="/filupload" element={isAuthenticated?<Fileupload />:<Navigate to="/login" />}  exact/> 
@@ -44,6 +44,7 @@ function App() {
             <Route path="/profile" element={isAuthenticated?<Profile />:<Navigate to="/login" />}  exact/> 
             <Route path="/address" element={isAuthenticated?<Address />:<Navigate to="/login" />}  exact/> 
             <Route path="/addaddress" element={isAuthenticated?<AddAddress />:<Navigate to="/login" />}  exact/> 
+            <Route path="/update_profile_pic" element={isAuthenticated?<UserProfileImage />:<Navigate to="/login" />}  exact/> 
             <Route path="*" element={<NotFoundPage />} />
             
           </Routes>
