@@ -33,7 +33,7 @@ const Home = () => {
       .catch((error) => {
         console.error('Error fetching data:', error);
         setIsLoading(false);
-        Logout();
+        // Logout();
       });
   
     return () => {
@@ -49,10 +49,7 @@ const Home = () => {
     const link = document.createElement('a');
     link.href = fileUrl;
     link.download = filname;
-    console.log("hello")
     link.click();
-    console.log("hello2")
-
   };
 
 
@@ -71,7 +68,7 @@ const Home = () => {
           <th>S.No</th>
           <th>File Name</th>
           <th>File Type</th>
-          <th>Upload Date</th>
+          {/* <th>Upload Date</th> */}
           <th>Download</th>
         </tr>
       </thead>
@@ -79,13 +76,17 @@ const Home = () => {
         {currentItems.map((item, index) => (
           <tr key={item.id}>
             <td>{index + 1}</td>
-            <td>{item.filename}</td>
+            <td>{item.file_name}</td>
             <td>{item.file_type}</td>
-            <td>{item.uploadtime}</td>
+            {/* <td>{item.uploadtime}</td> */}
             <td>
-                <a href={item.file} onClick={() => handleDownload(item.file,item.filename)}>
+            {item.files.map((subitem, index) => (
+               <div>
+                <p> Version - {subitem.file_version}</p>
+               <a href={subitem.file} onClick={() => handleDownload(subitem.file,"testfile")}>
                 <FaFileDownload /> </a>
-                
+                </div>
+            ))}
             </td>
           </tr>
         ))}
